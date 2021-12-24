@@ -11,12 +11,16 @@ class UsersController extends Controller
     public function getMeProfile()
     {
         $username = 'teste';
-        return view('users', compact('username'));
+        $args = ['a', 'b', 1, 2, 3];
+        return view('users', compact(['username', 'args']));
     }
 
     public function getProfile(string $username)
     {
-        return view('users', compact('username'));
+        $args = ['a' => 'abc', 'b', 1, 2, 3];
+        $whilezada = true;
+        $chaters = ['bot-1', 'bot-2', 'bot-3', 'bot-4', 'bot-5', 'bot-6', 'bot-7', 'bot-8'];
+        return view('users', compact(['username', 'args', 'whilezada', 'chaters']));
     }
 
     public function test(TestRequest $request)

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\UsersController;
+use \App\Http\Controllers\LandingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +15,9 @@ use \App\Http\Controllers\UsersController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [LandingController::class, 'getLandingPage']);
+Route::get('/about', [LandingController::class, 'getAboutPage']);
 
+/* Route::get('/user/{username}', [UsersController::class, 'getProfile'])->name('user-profile');
 Route::get('/user/me', [UsersController::class, 'getMeProfile']);
-Route::get('/user/{username}', [UsersController::class, 'getProfile'])->name('user-profile');
-Route::get('/test', [UsersController::class, 'test']);
+Route::get('/test', [UsersController::class, 'test']); */
